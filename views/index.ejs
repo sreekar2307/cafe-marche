@@ -1,0 +1,22 @@
+<% include partials/header %>
+<div class="container">
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Welcome to Café marché!</h1>
+			<p>Great coffeshops listed by millions like you</p>
+			<a href="/coffeshops/new" class="btn btn-large btn-success">Add a Coffeshop</a>
+		</div>
+    </div>
+	<div class="row text-center">
+			<% coffeshops.forEach(function(coffeshop){%>
+		     <div class=" col-lg-6 col-sm-12" style="margin-top: 30px">
+				<div class="card bg-white text-dark">
+				  <img class="card-img" src="<%=coffeshop.image%>" style="height: 350px">
+				  <h5 class="card-title"><%=coffeshop.name%></h5>
+				  <p><a href="/coffeshops/<%=coffeshop._id%>" class="btn btn-small btn-primary">More Info..</a></p>
+				</div>
+		     </div>
+			<%})%>
+	</div>
+</div>
+<% include partials/footer %>

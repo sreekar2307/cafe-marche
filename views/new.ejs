@@ -1,0 +1,20 @@
+<%include partials/header%>
+<div class="container" style="margin-top:20vmin;">
+	<h2 style="text-align: center; font-size: 2.7vmax;">Add a new Coffee shop</h2>
+	<form method="POST" action="/coffeshops" class="" style="width: 25vmax;margin: 0 auto;">
+		<div class="form-group" >
+			<input type="text" name="name" placeholder="name" class="form-control">
+		</div>
+	    <div class="from-group">
+	    	<input type="text" name="image" placeholder="imageurl" class="form-control">
+	    </div>
+	    <div class="from-group" style="margin-top:15px;">
+	    	<input type="text" name="description" placeholder="description" class="form-control">
+	    </div>	    
+		<div class="form-group" style="margin-top:10px;">
+			<input type="submit" class="btn btn-danger btn-small form-control">
+		</div>
+		<a href="/coffeshops">Back</a>
+	</form>	
+</div>
+<%include partials/footer%>

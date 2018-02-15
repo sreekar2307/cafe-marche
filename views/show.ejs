@@ -1,0 +1,35 @@
+<%include partials/header%>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<p class="lead">Café marché</p>
+			<div>
+				<li class="list-group-item active">1</li>
+				<li class="list-group-item">2</li>
+				<li class="list-group-item">3</li>
+			</div>
+		</div>
+    <div class="col-md-9">
+   	<div class="img-thumbnail">
+   	  <img src="<%=coffee.image%>" class="img-fluid">
+      <h4><a href="#"><%=coffee.name%></a></h4>
+      	<p><%=coffee.description%></p>
+   	</div>
+    <div class="well"">
+    	<form action="/coffeshops/<%=coffee._id%>/newComment" method="POST" style="margin-bottom: 10px">
+		<input type="text" name="author" placeholder="author" style="display: block; margin-top: 10px;margin-bottom: 10px">
+        <input type="text" name="comment" style="display: block; margin-bottom: 10px" placeholder="comment" size="0">
+		<input type="submit" name="submit" class="btn btn-small btn-primary">
+	</form><hr>
+	<%coffee.comments.forEach(function(comment){%>
+	<div class="well"  style="background: #e2e2e2;">
+			<strong style="display:block; margin-left:10px; margin-top: 10px"><%=comment.author%>:</strong>
+		    <p style="margin-left:10px; margin-bottom:10px "><%=comment.comment%></p>
+     <%});%> 
+	</div>
+    </div>
+   </div>	
+	</div>	
+</div>
+
+<%include partials/footer%>
